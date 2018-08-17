@@ -1,0 +1,55 @@
+import pygame, sys
+from pygame.locals import *
+import socket
+
+socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+socket.bind(('', 15555))
+while True:
+        socket.listen(5)
+        client, address = socket.accept()
+        print "{} connected".format( address )
+
+        response = client.recv(255)
+        if response != "":
+                print response
+
+print "Close"
+client.close()
+stock.close()
+
+pygame.init()
+
+
+FPS = 30 # frames per second setting
+fpsClock = pygame.time.Clock()
+
+# set up the window
+DISPLAY = pygame.display.set_mode((640, 480))
+pygame.display.set_caption('Cat game')
+catImg = pygame.image.load('cat.png')
+catx = 10
+caty = 10
+white = (255, 255, 255)
+
+
+while True: # the main game loop
+    DISPLAY.fill(white)
+    for event in pygame.event.get():
+        if event.type == KEYDOWN and event.key == K_RIGHT:
+            catx += 5
+        elif event.type == KEYDOWN and event.key == K_LEFT:
+            catx -= 5
+        elif event.type == KEYDOWN and event.key == K_UP:
+            caty -= 5
+        elif event.type == KEYDOWN and event.key == K_DOWN:
+            caty += 5
+        elif event.type == QUIT:
+            pygame.quit()
+            sys.exit()
+        DISPLAY.blit(catImg, (catx, caty))
+        pygame.display.update()
+        fpsClock.tick(FPS)
+    
+        
+
+
