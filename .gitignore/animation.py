@@ -1,21 +1,5 @@
 import pygame, sys
 from pygame.locals import *
-import socket
-
-socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-socket.bind(('', 15555))
-while True:
-        socket.listen(5)
-        client, address = socket.accept()
-        print "{} connected".format( address )
-
-        response = client.recv(255)
-        if response != "":
-                print response
-
-print "Close"
-client.close()
-stock.close()
 
 pygame.init()
 
@@ -36,13 +20,13 @@ while True: # the main game loop
     DISPLAY.fill(white)
     for event in pygame.event.get():
         if event.type == KEYDOWN and event.key == K_RIGHT:
-            catx += 5
+            catx += 10
         elif event.type == KEYDOWN and event.key == K_LEFT:
-            catx -= 5
+            catx -= 10
         elif event.type == KEYDOWN and event.key == K_UP:
-            caty -= 5
+            caty -= 10
         elif event.type == KEYDOWN and event.key == K_DOWN:
-            caty += 5
+            caty += 10
         elif event.type == QUIT:
             pygame.quit()
             sys.exit()
