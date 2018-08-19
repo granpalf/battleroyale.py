@@ -26,7 +26,7 @@ telep1 = pygame.image.load("sprites/telep1.png")
 telep2 = pygame.image.load("sprites/telep2.png")
 telep3 = pygame.image.load("sprites/telep3.png")
 telep4 = pygame.image.load("sprites/telep4.png")
-kame1 = pygame.image.load("sprites/kam1.png") 
+kame1 = pygame.image.load("sprites/kame1.png") 
 kame2 = pygame.image.load("sprites/kame2.png")
 kame3 = pygame.image.load("sprites/kame3.png")
 kame4 = pygame.image.load("sprites/kame4.png")
@@ -53,7 +53,7 @@ while True: # the main game loop
             DISPLAY.blit(black, (blackx, blacky))
             pygame.display.update()
             fpsClock.tick(FPS)
-            pygame.mixer.music.load('it.mp3')
+            pygame.mixer.music.load('sprites/it.mp3')
             pygame.mixer.music.play(0)
             black = telep3
             DISPLAY.blit(black, (blackx, blacky))
@@ -72,7 +72,7 @@ while True: # the main game loop
             pygame.display.update()
             fpsClock.tick(FPS)
         elif event.type == KEYDOWN and event.key == K_k:
-            pygame.mixer.music.load('kamesound.mp3')
+            pygame.mixer.music.load('sprites/kamesound.mp3')
             pygame.mixer.music.play(0)
             black = kame1
             DISPLAY.blit(black, (blackx, blacky))
