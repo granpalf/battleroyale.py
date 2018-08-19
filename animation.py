@@ -67,7 +67,7 @@ while True: # the main game loop
             DISPLAY.blit(black, (blackx, blacky))
             pygame.display.update()
             fpsClock.tick(FPS)
-            black = pygame.image.load('black.png')
+            black = pygame.image.load('sprites/black.png')
             DISPLAY.blit(black, (blackx, blacky))
             pygame.display.update()
             fpsClock.tick(FPS)
