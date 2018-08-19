@@ -26,10 +26,12 @@ telep1 = pygame.image.load("sprites/telep1.png")
 telep2 = pygame.image.load("sprites/telep2.png")
 telep3 = pygame.image.load("sprites/telep3.png")
 telep4 = pygame.image.load("sprites/telep4.png")
+kame1 = pygame.image.load("sprites/kam1.png") 
+kame2 = pygame.image.load("sprites/kame2.png")
+kame3 = pygame.image.load("sprites/kame3.png")
+kame4 = pygame.image.load("sprites/kame4.png")
+kame5 = pygame.image.load("sprites/kame5.png")
 pygame.key.set_repeat(100)
-
-
-
 
 while True: # the main game loop
     for event in pygame.event.get():
@@ -65,11 +67,41 @@ while True: # the main game loop
             DISPLAY.blit(black, (blackx, blacky))
             pygame.display.update()
             fpsClock.tick(FPS)
-            black = pygame.image.load('sprites/black.png')
+            black = pygame.image.load('black.png')
             DISPLAY.blit(black, (blackx, blacky))
             pygame.display.update()
             fpsClock.tick(FPS)
-
+        elif event.type == KEYDOWN and event.key == K_k:
+            pygame.mixer.music.load('kamesound.mp3')
+            pygame.mixer.music.play(0)
+            black = kame1
+            DISPLAY.blit(black, (blackx, blacky))
+            pygame.display.update()
+            fpsClock.tick(FPS)
+            sleep(2)
+            black = kame2
+            DISPLAY.blit(black, (blackx, blacky))
+            pygame.display.update()
+            fpsClock.tick(FPS)
+            sleep(3)
+            black = kame3
+            DISPLAY.blit(black, (blackx, blacky))
+            pygame.display.update()
+            fpsClock.tick(FPS)
+            sleep(2)
+            DISPLAY.blit(black, (blackx, blacky))
+            pygame.display.update()
+            fpsClock.tick(FPS)
+            black = kame4
+            DISPLAY.blit(black, (blackx, blacky))
+            pygame.display.update()
+            fpsClock.tick(FPS)
+            fond.blit(kame5, (120,20))
+            pygame.display.update()
+            fond.blit(kame5, (120,20))
+            pygame.display.update()
+            
+            
         elif event.type == QUIT:
             pygame.quit()
             sys.exit()
